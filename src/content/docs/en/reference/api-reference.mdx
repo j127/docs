@@ -412,9 +412,9 @@ You can also use `Astro.url` to create new URLs by passing it as an argument to 
 ```astro title="src/pages/index.astro"
 ---
 // Example: Construct a canonical URL using your production domain
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 // Example: Construct a URL for SEO meta tags using your current domain
-const socialImageURL = new URL('/images/preview.png', Astro.url);
+const socialImageURL = new URL('/images/preview.png', Astro.url).toString();
 ---
 <link rel="canonical" href={canonicalURL} />
 <meta property="og:image" content={socialImageURL} />
